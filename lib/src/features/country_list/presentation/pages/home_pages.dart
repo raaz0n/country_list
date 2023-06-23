@@ -119,11 +119,11 @@ class _HomePageScreenState extends State<HomePageScreen> {
                           child: IconButton(
                             onPressed: () {
                               showCupertinoAlertDialog(
-                                context: context,
-                                title: StringConstants.edit,
-                                controller: editingController
-                                  ..text = countryData[index].name,
-                              );
+                                  context: context,
+                                  title: StringConstants.edit,
+                                  controller: editingController
+                                    ..text = countryData[index].name,
+                                  id: countryData[index].id);
                             },
                             icon: const Icon(
                               Icons.edit,
@@ -147,6 +147,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
   void showCupertinoAlertDialog(
       {required BuildContext context,
       required String title,
+      required String id,
       required TextEditingController controller}) {
     showCupertinoDialog(
       barrierDismissible: true,
@@ -170,6 +171,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   CountrySaveEvent(
                     CountryEntity(
                       name: editingController.text,
+                      id: id,
                     ),
                   ),
                 );

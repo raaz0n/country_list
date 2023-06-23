@@ -20,6 +20,6 @@ class CountryLocalDataSourceImpl extends CountryLocalDataSource {
   @override
   Future<void> saveCountry(CountryTable countryTable) async {
     final countryBox = await Hive.openBox("countryBox");
-    await countryBox.put(countryTable.name, countryTable);
+    await countryBox.put(countryTable.id, countryTable);
   }
 }

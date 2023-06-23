@@ -5,18 +5,21 @@ part 'country_table.g.dart';
 
 @HiveType(typeId: 0)
 class CountryTable extends CountryEntity {
+  @override
   @HiveField(0)
-  final int? id;
+  final String id;
 
   @override
   @HiveField(1)
   final String name;
 
-  const CountryTable({this.id, required this.name}) : super(name: name);
+  const CountryTable({required this.id, required this.name})
+      : super(name: name, id: id);
 
   factory CountryTable.fromCountryEntity(CountryEntity countryEntity) {
     return CountryTable(
       name: countryEntity.name,
+      id: countryEntity.id,
     );
   }
 }
