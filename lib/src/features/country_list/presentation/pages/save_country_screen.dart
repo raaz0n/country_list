@@ -64,9 +64,9 @@ class _SaveCountryScreenState extends State<SaveCountryScreen> {
                     color: AppColor.royalBlue.withOpacity(0.1),
                     elevation: 0,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5)),
+                        borderRadius: BorderRadius.circular(Sizes.dimen_8)),
                     child: Padding(
-                      padding: const EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(Sizes.dimen_10),
                       child: BuildText(
                         text: state.countries[index].name,
                         color: AppColor.white,

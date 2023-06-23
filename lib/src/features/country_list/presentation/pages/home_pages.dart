@@ -4,12 +4,12 @@ import 'package:country_list/src/common/screenUtils/size_config.dart';
 import 'package:country_list/src/common/themes/theme_color.dart';
 import 'package:country_list/src/dependency_injection/get_it.dart';
 import 'package:country_list/src/features/country_list/presentation/country_bloc/country_bloc_bloc.dart';
-import 'package:country_list/src/features/country_list/presentation/pages/save_country_screen.dart';
 import 'package:country_list/src/features/country_list/presentation/save_country/save_country_bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../common/constants/route.dart';
 import '../../domain/entities/country_entity.dart';
 import '../widgets/text_widget.dart';
 
@@ -67,18 +67,14 @@ class _HomePageScreenState extends State<HomePageScreen> {
           ),
           actions: [
             TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SaveCountryScreen(),
-                    ),
-                  );
-                },
-                child: const BuildText(
-                  text: StringConstants.saveData,
-                  color: AppColor.white,
-                ))
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.saveCountryRoute);
+              },
+              child: const BuildText(
+                text: StringConstants.saveData,
+                color: AppColor.white,
+              ),
+            )
           ],
         ),
         body: BlocBuilder<CountryBloc, CountryState>(
