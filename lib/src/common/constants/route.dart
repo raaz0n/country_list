@@ -11,7 +11,6 @@ class Routes {
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings routeSettings) {
     // final arg = routeSettings.arguments;
-
     final routes = switch (routeSettings.name) {
       Routes.homeRoute => MaterialPageRoute(
           builder: (_) => const HomePageScreen(),
