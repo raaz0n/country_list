@@ -1,6 +1,5 @@
 class Sizes {
   Sizes._();
-
   static const double dimen_0 = 0;
   static const double dimen_1 = 1;
   static const double dimen_2 = 2;

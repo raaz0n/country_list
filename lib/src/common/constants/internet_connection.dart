@@ -46,7 +46,7 @@ class CheckInternetConnection {
         return false;
       }
     } else {
-// Neither mobile data or WIFI detected, not internet connection found.
+      // Neither mobile data or WIFI detected, not internet connection found.
       return false;
     }
   }
