@@ -1,5 +1,4 @@
 import 'package:country_list/src/common/constants/size_constant.dart';
-import 'package:country_list/src/common/constants/string_constants.dart';
 import 'package:country_list/src/common/themes/theme_color.dart';
 import 'package:country_list/src/dependency_injection/get_it.dart';
 import 'package:country_list/src/features/country_list/presentation/save_country/save_country_bloc.dart';
@@ -39,7 +38,7 @@ class _SaveCountryScreenState extends State<SaveCountryScreen> {
         ),
         centerTitle: false,
         title: const BuildText(
-          text: StringConstants.saveData,
+          text: "Save Data List",
           fontSize: Sizes.dimen_20,
           color: AppColor.white,
         ),

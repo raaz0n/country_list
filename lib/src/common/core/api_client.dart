@@ -1,10 +1,6 @@
-import 'dart:developer';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import '../../common/constants/internet_connection.dart';
 import 'api_constant.dart';
 
 class ApiClient {
@@ -12,37 +8,20 @@ class ApiClient {
 
   ApiClient(this._client);
 
-  static const String userAgent = 'User-Agent';
-  static const String contentType = 'Content-Type';
-  static const String accept = 'Accept';
-
-  Future<Map<String, String>> _createCommonHeader() async {
-    final common = <String, String>{};
-    common[accept] = ContentType.json.toString();
-    return common;
-  }
-
   Future<http.Response> get(
       {required String path, required Map<String, String> headers}) async {
-    var isInternet = await CheckInternetConnection().isInternet();
     debugPrint('🌍 🌍 🌍-------------------------------');
     debugPrint('GET Request');
     debugPrint(path);
     debugPrint(headers.toString());
     debugPrint('🌍 🌍 🌍-------------------------------');
-    headers.addAll(await _createCommonHeader());
 
-    if (isInternet) {
-      final response = await _client
-          .get(Uri.parse('${ApiConstant.BASE_URL}$path'), headers: headers);
-      if (response.statusCode == 200) {
-        return response;
-      } else {
-        throw Exception(response.reasonPhrase);
-      }
+    final response = await _client
+        .get(Uri.parse('${ApiConstant.BASE_URL}$path'), headers: headers);
+    if (response.statusCode == 200) {
+      return response;
     } else {
-      log("message");
-      return http.Response("", 503);
+      throw Exception(response.reasonPhrase);
     }
   }
 }
