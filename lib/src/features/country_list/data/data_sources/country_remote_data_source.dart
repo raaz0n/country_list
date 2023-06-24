@@ -20,7 +20,7 @@ class CountryRemoteDataSourceImpl extends CountryRemoteDataSource {
   Future<List<CountryModel>> getCountry() async {
     List<CountryModel> list = [];
     final response = await _client.get(
-      path: "/all",
+      path: "all",
       headers: headers,
     );
     final List<dynamic> object = json.decode(response.body);
