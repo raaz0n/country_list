@@ -16,7 +16,7 @@ class CountryRepositoryImpl extends CountryRepository {
   @override
   Future<Either<AppError, List<CountryModel>>> getCountry() async {
     try {
-      final countries = await remoteDataSource.GetCountry();
+      final countries = await remoteDataSource.getCountry();
       return Right(countries);
     } on Exception {
       return const Left(AppError("something Want Wroung"));

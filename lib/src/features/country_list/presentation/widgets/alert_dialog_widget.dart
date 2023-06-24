@@ -28,17 +28,6 @@ void showCupertinoAlertDialog(
             child: const BuildText(
               text: StringConstants.save,
             ),
-            //  () {
-            //   BlocProvider.of<SaveCountryBloc>(context).add(
-            //     CountrySaveEvent(
-            //       CountryEntity(
-            //         name: controller.text,
-            //         id: id,
-            //       ),
-            //     ),
-            //   );
-            //   Navigator.pop(context);
-            // },
           ),
         ],
       );

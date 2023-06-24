@@ -5,7 +5,7 @@ import 'package:country_list/src/features/country_list/data/models/country_model
 import '../../../../common/core/api_client.dart';
 
 abstract class CountryRemoteDataSource {
-  Future<List<CountryModel>> GetCountry();
+  Future<List<CountryModel>> getCountry();
 }
 
 class CountryRemoteDataSourceImpl extends CountryRemoteDataSource {
@@ -17,7 +17,7 @@ class CountryRemoteDataSourceImpl extends CountryRemoteDataSource {
   };
 
   @override
-  Future<List<CountryModel>> GetCountry() async {
+  Future<List<CountryModel>> getCountry() async {
     List<CountryModel> list = [];
     final response = await _client.get(
       path: "/all",
