@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:country_list/src/common/constants/logger.dart';
 import 'package:country_list/src/common/constants/route.dart';
 import 'package:country_list/src/common/constants/string_constants.dart';
 import 'package:country_list/src/common/core/common_observer.dart';
@@ -17,6 +18,7 @@ void main() async {
   unawaited(getIt.init());
   Bloc.observer = CommonBlocObserver();
   final appDocumentDir = await path.getApplicationDocumentsDirectory();
+  LogView.info(appDocumentDir.path);
   Hive.init(appDocumentDir.path);
   Hive.registerAdapter(CountryTableAdapter());
   runApp(const MyApp());

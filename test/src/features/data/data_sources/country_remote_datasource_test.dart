@@ -8,14 +8,14 @@ import 'package:http/http.dart' as http;
 
 import 'country_remote_datasource_test.mocks.dart';
 
-@GenerateMocks([http.Client])
+@GenerateMocks([ApiClient])
 void main() {
   late CountryRemoteDataSourceImpl dataSource;
-  late MockClient mockHttpClient;
+  late MockApiClient mockApiClient;
 
   setUp(() {
-    mockHttpClient = MockClient();
-    dataSource = CountryRemoteDataSourceImpl(ApiClient(mockHttpClient));
+    mockApiClient = MockApiClient();
+    dataSource = CountryRemoteDataSourceImpl(mockApiClient);
   });
 
   group('getCountry', () {
@@ -29,8 +29,8 @@ void main() {
     test('should return a list of CountryModel when the API call is successful',
         () async {
       // Arrange
-      when(mockHttpClient.get(
-        Uri.parse('https://restcountries.com/v2/all'),
+      when(mockApiClient.get(
+        path: "all",
         headers: {
           "Content-Type": "application/json",
         },
@@ -48,8 +48,8 @@ void main() {
       expect(result[1].id, '2');
 
       // Verify the API call
-      verify(mockHttpClient.get(
-        Uri.parse('https://restcountries.com/v2/all'),
+      verify(mockApiClient.get(
+        path: "all",
         headers: {
           "Content-Type": "application/json",
         },

@@ -1,3 +1,4 @@
+import 'package:country_list/src/common/constants/string_constants.dart';
 import 'package:country_list/src/features/country_list/data/tables/country_table.dart';
 import 'package:hive/hive.dart';
 
@@ -7,9 +8,11 @@ abstract class CountryLocalDataSource {
 }
 
 class CountryLocalDataSourceImpl extends CountryLocalDataSource {
+  // final HiveInterface hive;
+  // CountryLocalDataSourceImpl(this.hive);
   @override
   Future<List<CountryTable>> getCountries() async {
-    final countryBox = await Hive.openBox("countryBox");
+    final countryBox = await Hive.openBox(StringConstants.COUNTRYBOX);
     final List<CountryTable> countries = [];
     for (var element in countryBox.values) {
       countries.add(element);
@@ -19,7 +22,7 @@ class CountryLocalDataSourceImpl extends CountryLocalDataSource {
 
   @override
   Future<void> saveCountry(CountryTable countryTable) async {
-    final countryBox = await Hive.openBox("countryBox");
+    final countryBox = await Hive.openBox(StringConstants.COUNTRYBOX);
     await countryBox.put(countryTable.id, countryTable);
   }
 }
