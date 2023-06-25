@@ -76,17 +76,18 @@ Most preferred :-
             │       ├── get_local_countries.dart
             │       └── save_country.dart
             └── presentation
-                ├── country_bloc
-                │   ├── country_bloc_bloc.dart
-                │   ├── country_bloc_event.dart
-                │   └── country_bloc_state.dart
+                ├── bloc
+                │   ├── country_bloc
+                │   │   ├── country_bloc_bloc.dart
+                │   │   ├── country_bloc_event.dart
+                │   │   └── country_bloc_state.dart
+                │   └── save_country
+                │       ├── save_country_bloc.dart
+                │       ├── save_country_event.dart
+                │       └── save_country_state.dart
                 ├── pages
                 │   ├── home_pages.dart
                 │   └── save_country_screen.dart
-                ├── save_country
-                │   ├── save_country_bloc.dart
-                │   ├── save_country_event.dart
-                │   └── save_country_state.dart
                 └── widgets
                     ├── alert_dialog_widget.dart
                     └── text_widget.dart

@@ -5,8 +5,8 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../common/entities/app_error.dart';
-import '../../domain/entities/country_entity.dart';
+import '../../../../../common/entities/app_error.dart';
+import '../../../domain/entities/country_entity.dart';
 
 part 'save_country_event.dart';
 part 'save_country_state.dart';

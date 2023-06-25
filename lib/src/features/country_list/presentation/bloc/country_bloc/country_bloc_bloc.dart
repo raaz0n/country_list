@@ -1,11 +1,10 @@
+import 'package:country_list/src/common/entities/app_error.dart';
+import 'package:country_list/src/common/entities/no_params.dart';
+import 'package:country_list/src/features/country_list/domain/entities/country_entity.dart';
 import 'package:country_list/src/features/country_list/domain/usecases/get_country.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../../common/entities/app_error.dart';
-import '../../../../common/entities/no_params.dart';
-import '../../domain/entities/country_entity.dart';
 
 part 'country_bloc_event.dart';
 part 'country_bloc_state.dart';

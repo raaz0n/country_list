@@ -5,8 +5,8 @@ import 'package:country_list/src/features/country_list/domain/repositories/count
 import 'package:country_list/src/features/country_list/domain/usecases/get_country.dart';
 import 'package:country_list/src/features/country_list/domain/usecases/get_local_countries.dart';
 import 'package:country_list/src/features/country_list/domain/usecases/save_country.dart';
-import 'package:country_list/src/features/country_list/presentation/country_bloc/country_bloc_bloc.dart';
-import 'package:country_list/src/features/country_list/presentation/save_country/save_country_bloc.dart';
+import 'package:country_list/src/features/country_list/presentation/bloc/country_bloc/country_bloc_bloc.dart';
+import 'package:country_list/src/features/country_list/presentation/bloc/save_country/save_country_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
 

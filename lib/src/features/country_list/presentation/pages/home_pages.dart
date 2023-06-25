@@ -3,8 +3,8 @@ import 'package:country_list/src/common/constants/string_constants.dart';
 import 'package:country_list/src/common/screenUtils/size_config.dart';
 import 'package:country_list/src/common/themes/theme_color.dart';
 import 'package:country_list/src/dependency_injection/get_it.dart';
-import 'package:country_list/src/features/country_list/presentation/country_bloc/country_bloc_bloc.dart';
-import 'package:country_list/src/features/country_list/presentation/save_country/save_country_bloc.dart';
+import 'package:country_list/src/features/country_list/presentation/bloc/country_bloc/country_bloc_bloc.dart';
+import 'package:country_list/src/features/country_list/presentation/bloc/save_country/save_country_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
