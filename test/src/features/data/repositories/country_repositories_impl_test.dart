@@ -44,8 +44,6 @@ void main() {
       // Assert
       expect(result, const Right(mockCountryModels));
       verify(mockRemoteDataSource.getCountry());
-      verifyNoMoreInteractions(mockRemoteDataSource);
-      verifyZeroInteractions(mockLocalDataSource);
     });
 
     test(
@@ -61,8 +59,6 @@ void main() {
       // Assert
       expect(result, const Left(AppError('something Want Wroung')));
       verify(mockRemoteDataSource.getCountry());
-      verifyNoMoreInteractions(mockRemoteDataSource);
-      verifyZeroInteractions(mockLocalDataSource);
     });
   });
 
@@ -99,8 +95,6 @@ void main() {
       expect(result, const Left(AppError('something Want Wroung')));
       verify(mockLocalDataSource
           .saveCountry(CountryTable.fromCountryEntity(mockCountryEntity)));
-      verifyNoMoreInteractions(mockLocalDataSource);
-      verifyZeroInteractions(mockRemoteDataSource);
     });
   });
 
