@@ -1,7 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:country_list/src/common/entities/app_error.dart';
 import 'package:country_list/src/common/entities/no_params.dart';
-import 'package:country_list/src/features/country_list/data/models/country_model.dart' show CountryModel;
+import 'package:country_list/src/features/country_list/domain/entities/country_entity.dart';
 import 'package:country_list/src/features/country_list/domain/usecases/get_country.dart';
 import 'package:country_list/src/features/country_list/presentation/bloc/country_bloc/country_bloc_bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -25,9 +25,9 @@ void main() {
     countryBloc.close();
   });
 
-  final List<CountryModel> tCountries = [
-    CountryModel(name: 'Country 1', id: '1'),
-    CountryModel(name: 'Country 2', id: '2'),
+  final List<CountryEntity> tCountries = [
+    CountryEntity(name: 'Country 1', id: '1'),
+    CountryEntity(name: 'Country 2', id: '2'),
   ];
 
   group('CountryBloc Tests', () {
