@@ -35,6 +35,12 @@ void main() {
       expect(countryBloc.state, CountryInitial());
     });
 
+    blocTest(
+      "emit [] when nothing is added",
+      build: () => countryBloc,
+      expect: () => [],
+    );
+
     blocTest<CountryBloc, CountryState>(
       'emits [CountryLoaded] when CountryLoadEvent is added and fetch is successful',
       build: () {
